@@ -9,21 +9,26 @@ pygame.display.set_caption("Sans fight")
 
 # Cores
 preto = (0, 0, 0)
+branco = (255, 255, 255)
+
+# Vida do jogador
+vida = 5
+fonte = pygame.font.SysFont("arial", 30)
 
 # Carregar imagens e redimensionar
 sansVoador = pygame.image.load(os.path.join("Recursos", "sans.png"))
 sansVoador = pygame.transform.scale(sansVoador, (100, 100))
 
 jogador = pygame.image.load(os.path.join("Recursos", "jogador.png"))
-jogador = pygame.transform.scale(jogador, (50, 50))
+jogador = pygame.transform.scale(jogador, (100, 100))
 jogadorRect = jogador.get_rect()
 jogadorRect.topleft = (10, 350)
 
 osso = pygame.image.load(os.path.join("Recursos", "osso.png"))
-osso = pygame.transform.scale(osso, (120, 120))
+osso = pygame.transform.scale(osso, (30, 30))
 
 ossoLongo = pygame.image.load(os.path.join("Recursos", "ossoLongo.png"))
-ossoLongo = pygame.transform.scale(ossoLongo, (150, 300))
+ossoLongo = pygame.transform.scale(ossoLongo, (30, 100))
 
 # Velocidade de movimento
 velocidade = 5
@@ -67,8 +72,23 @@ while True:
     for o in ossos:
         o["rect"].x -= velocidade_osso
 
-    # Remover ossos que saíram da tela
-    ossos = [o for o in ossos if o["rect"].right > 0]
+    # Colisões e remoção dos ossos que colidiram ou saíram da tela
+    ossos_colididos = []
+    for o in ossos:
+        if jogadorRect.colliderect(o["rect"]):
+            vida -= 1
+            ossos_colididos.append(o)
+        elif o["rect"].right <= 0:
+            ossos_colididos.append(o)
+
+    for o in ossos_colididos:
+        ossos.remove(o)
+
+    # Verifica se a vida acabou
+    if vida <= 0:
+        print("GAME OVER")
+        pygame.quit()
+        exit()
 
     # Desenho da tela
     tela.fill(preto)
@@ -76,6 +96,10 @@ while True:
 
     for o in ossos:
         tela.blit(o["imagem"], o["rect"])
+
+    # Exibir a vida na tela
+    texto_vida = fonte.render(f"Vida: {vida}", True, branco)
+    tela.blit(texto_vida, (10, 10))
 
     pygame.display.update()
     relogio.tick(60)
