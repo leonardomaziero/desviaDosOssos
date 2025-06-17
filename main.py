@@ -20,10 +20,10 @@ jogadorRect = jogador.get_rect()
 jogadorRect.topleft = (10, 350)
 
 osso = pygame.image.load(os.path.join("Recursos", "osso.png"))
-osso = pygame.transform.scale(osso, (100, 100))
+osso = pygame.transform.scale(osso, (120, 120))
 
 ossoLongo = pygame.image.load(os.path.join("Recursos", "ossoLongo.png"))
-ossoLongo = pygame.transform.scale(ossoLongo, (100, 300))
+ossoLongo = pygame.transform.scale(ossoLongo, (150, 300))
 
 # Velocidade de movimento
 velocidade = 5
