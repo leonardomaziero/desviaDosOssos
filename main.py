@@ -20,7 +20,7 @@ jogadorRect = jogador.get_rect()
 jogadorRect.topleft = (10, 350)
 
 # Velocidade de movimento
-velocidade = 5
+velocidade = 5  
 
 # Loop principal
 while True:
