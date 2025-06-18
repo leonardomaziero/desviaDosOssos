@@ -73,7 +73,4 @@ cx_Freeze (para gerar o .exe)
 
 
 
-Testador: 
-
-
-Adriano Cézar Tessaro Júnior - RA: 1138080
+Testador Adriano Cézar Tessaro Júnior - RA: 1138080
