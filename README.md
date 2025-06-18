@@ -69,3 +69,11 @@ pyttsx3 (voz do Sans)
 speech_recognition (entrada de nome por voz)
 
 cx_Freeze (para gerar o .exe)
+
+
+
+
+Testador: 
+
+
+Adriano Cézar Tessaro Júnior - RA: 1138080
