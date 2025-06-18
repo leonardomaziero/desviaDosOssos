@@ -5,7 +5,13 @@ import pyttsx3
 import threading
 import time
 import math
+import sys
 
+
+def exit():
+    pygame.quit()
+    sys.exit()
+    
 pygame.init()
 pygame.mixer.init()
 
