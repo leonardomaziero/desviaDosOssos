@@ -1,3 +1,4 @@
+Leonardo Grimm Maziero - RA: 1137914
 Dodge the Bones é um jogo 2D criado com Pygame, inspirado nas batalhas de Undertale. O jogador controla um pequeno personagem que deve desviar de ossos que se movem horizontalmente pela 
 tela. O objetivo é sobreviver o máximo possível, ganhando 1 ponto por osso evitado, enquanto a velocidade dos ossos aumenta progressivamente.
 
