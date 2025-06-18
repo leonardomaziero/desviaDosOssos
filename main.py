@@ -12,7 +12,7 @@ pygame.mixer.init()
 tamanho = (1000, 700)
 tela = pygame.display.set_mode(tamanho)
 relogio = pygame.time.Clock()
-pygame.display.set_caption("Sans fight")
+pygame.display.set_caption("Dodge the bones!")
 
 # Cores
 preto = (0, 0, 0)
@@ -244,7 +244,7 @@ def menu_inicial():
                     return opcoes[selecionado]
 
         tela.fill(preto)
-        titulo = fonte_grande.render("Sans Fight", True, branco)
+        titulo = fonte_grande.render("Dodge the bones!", True, branco)
         tela.blit(titulo, ((tamanho[0] - titulo.get_width()) // 2, 100))
 
         for i, opcao in enumerate(opcoes):
